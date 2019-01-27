@@ -20,6 +20,7 @@
 </template>
 
 <script>
+// TODO: Remove search button and add search icon. Also make whole li clickable.
 export default {
     data() {
         return {

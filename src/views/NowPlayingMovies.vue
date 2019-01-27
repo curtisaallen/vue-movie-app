@@ -10,7 +10,8 @@
                 </div>
             </div>
         <div v-if="isLoading">
-              <div class="row">
+            <div class="row">
+                <template v-if="movienowplaying < isLoading">
                 <div class="col-md-4" v-for="movienowplaying in moviesNowPlaying" :key="movienowplaying.id">
                   <div class="card mb-4 shadow-sm">
                     <img class="bd-placeholder-img card-img-top" width="100%" height="225" :src="'https://image.tmdb.org/t/p/original/' + movienowplaying.backdrop_path" />
@@ -31,6 +32,12 @@
                     </div>
                   </div>
                 </div>
+                </template>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button @click="movieToShow += 3">show more movies</button>
+                </div>
             </div>
         </div>
         <div v-else>
@@ -49,7 +56,11 @@
 </template>
 
 <script>
+// TODO: Add Load More Button to code
 export default {
+    data() {
+        movieToShow: 3
+    },
     computed: {
         moviesNowPlaying() {
            return this.$store.state.moviesNowPlaying;
