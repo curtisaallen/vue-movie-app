@@ -20,7 +20,7 @@ npm run serve
 ```
 
 ## Tools
-Key tools used in this React project are:
+Key tools used in this Vue project are:
 
 | Tool             | Description   |
 | :-------------:|--------------|
